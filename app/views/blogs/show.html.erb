@@ -8,7 +8,7 @@
     <i class="fa fa-instagram"></i>
   </div>
 </header>
- 
+
 <nav>
   <ul class="nav-list">
     <li class="nav-list-item">
@@ -18,7 +18,7 @@
     <li class="nav-list-item">Topic</li>
   </ul>
 </nav>
- 
+
 <div class="main-visual">
   <div class="main-visual-content">
     <p class="main-visual-text">
@@ -31,7 +31,7 @@
     </p>
   </div>
 </div>
- 
+
 <main class="clearfix">
   <section class="single-blog">
     <h2 class="blog-headline">Blog</h2>
@@ -39,7 +39,7 @@
       <h3 class="blog-box-headline">
         <%= @blog.title %>
       </h3>
- 
+
       <div class="blog-box-content">
         <p class="category">
           <%= @blog.category %>
@@ -48,15 +48,17 @@
           <%= @blog.created_at %>
         </p>
       </div>
- 
+
       <%= image_tag "img/forest.jpg", class:"single-image" %>
       <p class="single-text">
         <%= @blog.body %>
       </p>
- 
+
       <%= link_to "編集", edit_blog_path(@blog) %>
-      <a href="#">削除</a>
- 
+      <!--blog_pathはresourcesが定義してくれています -->
+      <!-- @blogはアクションから渡ってきている投稿記事のデータ -->
+      <%= link_to "削除", blog_path(@blog), method: :delete %>
+
       <div class="author-case clearfix">
         <div class="author-image"></div>
         <div class="author-box">
@@ -66,7 +68,7 @@
       </div>
     </section>
   </section>
- 
+
   <div class="sidebar">
     <section class="popular">
       <h2 class="sidebar-headline">Popular</h2>
